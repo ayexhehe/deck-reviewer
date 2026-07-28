@@ -4,6 +4,7 @@ import Review from './pages/Review'
 import MockSetup from './pages/MockSetup'
 import MockTest from './pages/MockTest'
 import Leaderboard from './pages/Leaderboard'
+import LeaderboardTest from './pages/LeaderboardTest'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/mock-setup" element={<MockSetup />} />
         <Route path="/mock-test" element={<MockTest />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/leaderboard-test" element={<LeaderboardTest />} />
       </Routes>
     </BrowserRouter>
   )

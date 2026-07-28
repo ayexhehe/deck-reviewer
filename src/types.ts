@@ -11,3 +11,12 @@ export interface Question {
   status: string
   note: string
 }
+
+export interface ScoreEntry {
+  id: number
+  nickname: string
+  score: number
+  total: number
+  pct: number
+  created_at: string
+}

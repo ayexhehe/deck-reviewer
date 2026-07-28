@@ -28,13 +28,20 @@ const Landing: FC = () => {
           <div className="text-chrome-text-secondary text-sm mt-0.5">Timed randomized test — see your score at the end</div>
         </button>
 
-        <div className="w-full bg-chrome-surface/50 border border-chrome-border rounded-xl px-6 py-5 text-left opacity-50 cursor-not-allowed">
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-semibold text-chrome-text-secondary">Quiz Leaderboard</span>
-            <span className="text-xs bg-chrome-elevated text-chrome-text-secondary px-2 py-0.5 rounded-full">Coming Soon</span>
-          </div>
-          <div className="text-chrome-text-muted text-sm mt-0.5">Compete with others on the global leaderboard</div>
-        </div>
+        <button
+          onClick={() => navigate('/leaderboard-test')}
+          className="w-full bg-chrome-surface hover:bg-chrome-elevated border border-chrome-border text-left rounded-xl px-6 py-5 transition-colors"
+        >
+          <div className="text-lg font-semibold text-chrome-text">Quiz Leaderboard</div>
+          <div className="text-chrome-text-secondary text-sm mt-0.5">100 random questions — compete on the global leaderboard</div>
+        </button>
+
+        <button
+          onClick={() => navigate('/leaderboard')}
+          className="text-chrome-text-secondary hover:text-chrome-text text-sm text-center transition-colors"
+        >
+          View leaderboard →
+        </button>
       </div>
     </div>
   )
