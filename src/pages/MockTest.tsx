@@ -20,12 +20,12 @@ const MockTest: FC = () => {
 
   if (!questions.length) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center text-white">
+      <div className="min-h-screen bg-chrome-bg flex items-center justify-center text-chrome-text">
         <div className="text-center">
-          <p className="mb-4 text-slate-400">No questions found. Please start from the setup screen.</p>
+          <p className="mb-4 text-chrome-text-secondary">No questions found. Please start from the setup screen.</p>
           <button
             onClick={() => navigate('/mock-setup')}
-            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl"
+            className="bg-chrome-surface hover:bg-chrome-elevated border border-chrome-border text-chrome-text px-6 py-3 rounded-xl"
           >
             Go to Setup
           </button>
@@ -66,16 +66,13 @@ const MockTest: FC = () => {
     const pct = Math.round((score / total) * 100)
     const passed = pct >= 75
     return (
-      <div
-        className="min-h-screen bg-slate-900 flex flex-col items-center justify-center px-4 py-12 cursor-pointer"
-        onClick={() => {}}
-      >
+      <div className="min-h-screen bg-chrome-bg flex flex-col items-center justify-center px-4 py-12">
         <div className="w-full max-w-sm text-center">
-          <div className={`text-6xl font-bold mb-2 ${passed ? 'text-green-400' : 'text-red-400'}`}>{pct}%</div>
-          <div className="text-white text-2xl font-semibold mb-1">
+          <div className={`text-6xl font-bold mb-2 ${passed ? 'text-chrome-accent' : 'text-chrome-danger'}`}>{pct}%</div>
+          <div className="text-chrome-text text-2xl font-semibold mb-1">
             {score} / {total}
           </div>
-          <div className={`text-sm mb-8 ${passed ? 'text-green-400' : 'text-red-400'}`}>
+          <div className={`text-sm mb-8 ${passed ? 'text-chrome-accent' : 'text-chrome-danger'}`}>
             {passed ? 'Passed' : 'Failed'}
           </div>
 
@@ -89,13 +86,13 @@ const MockTest: FC = () => {
                 setScore(0)
                 setDone(false)
               }}
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white rounded-xl py-4 font-semibold"
+              className="w-full bg-chrome-surface hover:bg-chrome-elevated border border-chrome-border text-chrome-text rounded-xl py-4 font-semibold transition-colors"
             >
               Retake ({total} questions)
             </button>
             <button
               onClick={() => navigate('/')}
-              className="w-full bg-slate-700 hover:bg-slate-600 text-white rounded-xl py-4 font-semibold"
+              className="w-full bg-transparent hover:bg-chrome-surface border border-chrome-border text-chrome-text-secondary rounded-xl py-4 font-semibold transition-colors"
             >
               Home
             </button>
@@ -107,37 +104,37 @@ const MockTest: FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-slate-900 flex flex-col"
+      className="min-h-screen bg-chrome-bg flex flex-col"
       onClick={selectedIndex !== null ? advance : undefined}
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-chrome-border">
         <button
           onClick={e => { e.stopPropagation(); navigate('/mock-setup') }}
-          className="text-slate-400 hover:text-white text-sm transition-colors"
+          className="text-chrome-text-secondary hover:text-chrome-text text-sm transition-colors"
         >
           ← Exit
         </button>
-        <span className="text-slate-300 text-sm font-medium">
+        <span className="text-chrome-text-secondary text-sm font-medium">
           {currentIndex + 1} / {total}
         </span>
       </div>
 
       {/* Progress bar */}
-      <div className="h-1 bg-slate-700">
+      <div className="h-1 bg-chrome-surface">
         <div
-          className="h-full bg-blue-500 transition-all duration-300"
+          className="h-full bg-chrome-accent transition-all duration-300"
           style={{ width: `${((currentIndex + 1) / total) * 100}%` }}
         />
       </div>
 
       {/* Content */}
       <div className="flex-1 flex flex-col max-w-2xl mx-auto w-full px-4 py-6 md:py-10">
-        <p className="text-white text-base md:text-lg font-medium leading-relaxed mb-6">
+        <p className="text-chrome-text text-base md:text-lg font-medium leading-relaxed mb-6">
           {current.question}
         </p>
 
-        <div className="flex flex-col gap-3" onClick={e => e.stopPropagation()}>
+        <div className="flex flex-col gap-3">
           {current.choices.map((choice, i) => (
             <ChoiceButton
               key={i}
@@ -150,10 +147,10 @@ const MockTest: FC = () => {
         </div>
 
         {selectedIndex !== null && (
-          <div className="mt-6 text-center text-sm text-slate-400 select-none">
+          <div className="mt-6 text-center text-sm text-chrome-text-secondary select-none">
             {isCorrect
-              ? <span className="text-green-400 font-medium">Correct!</span>
-              : <span className="text-red-400 font-medium">Wrong answer</span>
+              ? <span className="text-chrome-accent font-medium">Correct!</span>
+              : <span className="text-chrome-danger font-medium">Wrong answer</span>
             }
             <span className="block mt-1">Tap anywhere to continue</span>
           </div>

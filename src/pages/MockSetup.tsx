@@ -22,23 +22,23 @@ const MockSetup: FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-chrome-bg flex flex-col items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
         <button
           onClick={() => navigate('/')}
-          className="text-slate-400 hover:text-white text-sm mb-8 block"
+          className="text-chrome-text-secondary hover:text-chrome-text text-sm mb-8 block transition-colors"
         >
           ← Back
         </button>
-        <h1 className="text-white text-2xl font-bold mb-2">Mock Test</h1>
-        <p className="text-slate-400 text-sm mb-8">How many questions do you want to answer?</p>
+        <h1 className="text-chrome-text text-2xl font-bold mb-2">Mock Test</h1>
+        <p className="text-chrome-text-secondary text-sm mb-8">How many questions do you want to answer?</p>
 
         <div className="flex flex-col gap-3">
           {COUNTS.map(({ label, value }) => (
             <button
               key={value}
               onClick={() => start(value)}
-              className="w-full bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-white rounded-xl px-6 py-4 text-left font-semibold transition-colors"
+              className="w-full bg-chrome-surface hover:bg-chrome-elevated border border-chrome-border text-chrome-text rounded-xl px-6 py-4 text-left font-semibold transition-colors"
             >
               {label} Questions
             </button>

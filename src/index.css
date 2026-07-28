@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+  --color-chrome-bg: #202124;
+  --color-chrome-surface: #292a2d;
+  --color-chrome-elevated: #35363a;
+  --color-chrome-border: #3c4043;
+  --color-chrome-text: #e8eaed;
+  --color-chrome-text-secondary: #9aa0a6;
+  --color-chrome-text-muted: #80868b;
+  --color-chrome-accent: #81c995;
+  --color-chrome-accent-hover: #a8dab5;
+  --color-chrome-danger: #f28b82;
+  --color-chrome-warning: #fdd663;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background-color: var(--color-chrome-bg);
 }

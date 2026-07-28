@@ -10,17 +10,16 @@ interface Props {
 }
 
 const stateClasses: Record<ChoiceState, string> = {
-  idle: 'bg-slate-700 hover:bg-slate-600 border-slate-600 text-white',
-  correct: 'bg-green-600 border-green-500 text-white',
-  wrong: 'bg-red-600 border-red-500 text-white',
-  reveal: 'bg-green-600 border-green-500 text-white',
+  idle: 'bg-chrome-surface hover:bg-chrome-elevated border-chrome-border text-chrome-text',
+  correct: 'bg-chrome-accent/15 border-chrome-accent text-chrome-accent',
+  wrong: 'bg-chrome-danger/15 border-chrome-danger text-chrome-danger',
+  reveal: 'bg-chrome-accent/15 border-chrome-accent text-chrome-accent',
 }
 
 const ChoiceButton: FC<Props> = ({ label, state, onClick, disabled }) => {
   return (
     <button
       onClick={onClick}
-      disabled={disabled}
       className={`w-full text-left px-4 py-3 rounded-lg border transition-colors duration-150 text-sm md:text-base leading-snug ${stateClasses[state]} ${disabled ? 'cursor-default' : 'cursor-pointer'}`}
     >
       {label}
